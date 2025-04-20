@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Prism</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .name {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            position: relative;
+            cursor: pointer;
+            animation: glow 2s infinite alternate;
+        }
+
+        .name::before,
+        .name::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+            z-index: -1;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .name:hover::before {
+            transform: scaleX(1);
+        }
+
+        .name:hover::after {
+            transform: scaleX(1);
+            transform-origin: right;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #ff9a9e, 0 0 20px #fad0c4, 0 0 30px #ff9a9e;
+            }
+            to {
+                text-shadow: 0 0 20px #ff9a9e, 0 0 30px #fad0c4, 0 0 40px #ff9a9e;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="name">Team Prism</div>
+</body>
+</html>
